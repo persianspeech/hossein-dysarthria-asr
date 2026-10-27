@@ -1,38 +1,64 @@
 {
-  "checked_utc": "2026-10-27T08:47:48.770754+00:00",
-  "private": true,
+  "checked_utc": "2026-10-27T09:31:58.284780+00:00",
+  "private": false,
   "samples": [
     {
       "id": "1003",
       "authenticated_status": 200,
       "sha256_verified": true,
       "content_type": "audio/x-flac",
-      "anonymous_status": 401
+      "anonymous_status": 200
     },
     {
       "id": "1004",
       "authenticated_status": 200,
       "sha256_verified": true,
       "content_type": "audio/x-flac",
-      "anonymous_status": 401
+      "anonymous_status": 200
     },
     {
       "id": "1009",
       "authenticated_status": 200,
       "sha256_verified": true,
       "content_type": "audio/x-flac",
-      "anonymous_status": 401
+      "anonymous_status": 200
     }
   ],
   "authenticated_browser_render_verified": false,
-  "browser_note": "Available browser is signed out; private page is not visible without login.",
+  "browser_note": "Dataset Viewer, all split counts and audio controls rendered in a signed-out browser.",
   "native_viewer": {
-    "status": 501,
-    "error_code": "NotSupportedPrivateRepositoryError",
-    "error": "Not supported: dataset repository Hossein-Dysarthria-Net/hossein-persian-speech is private. Private datasets are only supported for PRO users and Enterprise Hub organizations."
+    "status": 200,
+    "enabled": true,
+    "error_code": null,
+    "splits": [
+      {
+        "split": "train",
+        "expected_split_rows": 408,
+        "rows_returned": 100,
+        "audio_type": "audio/flac",
+        "audio_http_status": 200
+      },
+      {
+        "split": "validation",
+        "expected_split_rows": 51,
+        "rows_returned": 51,
+        "audio_type": "audio/flac",
+        "audio_http_status": 200
+      },
+      {
+        "split": "test",
+        "expected_split_rows": 51,
+        "rows_returned": 51,
+        "audio_type": "audio/flac",
+        "audio_http_status": 200
+      }
+    ],
+    "browser_render_verified": true,
+    "public_audio_playback_assets_verified": true
   },
-  "dataset_commit": "dd6d84ce4f534684d94ef14bdd6134c3ca934f48",
-  "dataset_anonymous_api_status": 401,
-  "model_commit": "f5c336338ba9fb98c7b5a16fead2840f6dfab24a",
-  "model_anonymous_api_status": 401
+  "dataset_commit": "4d69bf9bb6ea28be8be697bcdceec93404fba00b",
+  "dataset_anonymous_api_status": 200,
+  "model_commit": "a2a0457e424c92df2e2a02e4c1e1cdfba60f1f49",
+  "model_anonymous_api_status": 200,
+  "anonymous_browser_render_verified": true
 }

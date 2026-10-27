@@ -1,14 +1,68 @@
 {
+  "checked_utc": "2026-10-27T09:31:58.284780+00:00",
   "dataset": {
-    "status": 401,
-    "anonymous_access_denied": true,
     "repo_id": "Hossein-Dysarthria-Net/hossein-persian-speech",
-    "commit": "72e3ec5da87fb5ba5c1fa283df397dfb30aeeac9"
+    "commit": "4d69bf9bb6ea28be8be697bcdceec93404fba00b",
+    "status": 200,
+    "private": false,
+    "anonymous_access_denied": false,
+    "anonymous_readme_sha256_verified": true,
+    "anonymous_artifact_head_status": 200,
+    "artifact_bytes": 76340427
   },
   "model": {
-    "status": 401,
-    "anonymous_access_denied": true,
     "repo_id": "Hossein-Dysarthria-Net/Shenava-Koochik-Hossein",
-    "commit": "d82afeea14ccce378643d20c14ef65ae920b47aa"
+    "commit": "a2a0457e424c92df2e2a02e4c1e1cdfba60f1f49",
+    "status": 200,
+    "private": false,
+    "anonymous_access_denied": false,
+    "anonymous_readme_sha256_verified": true,
+    "anonymous_artifact_head_status": 200,
+    "artifact_bytes": 459673600
+  },
+  "github": {
+    "url": "https://github.com/persianspeech/hossein-dysarthria-asr",
+    "status": 200,
+    "private": false,
+    "commit": "877ab29b186c01d3cd450d878dc51b1c82ce7d8b",
+    "anonymous_source_files_verified": 3
+  },
+  "organization": {
+    "url": "https://huggingface.co/Hossein-Dysarthria-Net",
+    "status": 200,
+    "private": false,
+    "contact_details_and_encouragement_visible": true,
+    "browser_render_verified": true,
+    "commit": "0acfdb2aa82620803b70620c176a5da47dfe7a03"
+  },
+  "native_viewer": {
+    "status": 200,
+    "enabled": true,
+    "error_code": null,
+    "splits": [
+      {
+        "split": "train",
+        "expected_split_rows": 408,
+        "rows_returned": 100,
+        "audio_type": "audio/flac",
+        "audio_http_status": 200
+      },
+      {
+        "split": "validation",
+        "expected_split_rows": 51,
+        "rows_returned": 51,
+        "audio_type": "audio/flac",
+        "audio_http_status": 200
+      },
+      {
+        "split": "test",
+        "expected_split_rows": 51,
+        "rows_returned": 51,
+        "audio_type": "audio/flac",
+        "audio_http_status": 200
+      }
+    ],
+    "browser_render_verified": true,
+    "public_audio_playback_assets_verified": true
   }
 }

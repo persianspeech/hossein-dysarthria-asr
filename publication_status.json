@@ -1,10 +1,12 @@
 {
-  "checked_utc": "2026-10-27T08:47:48.770754+00:00",
-  "requested_visibility": "private",
+  "checked_utc": "2026-10-27T09:31:58.284780+00:00",
+  "requested_visibility": "public",
   "github": {
     "url": "https://github.com/persianspeech/hossein-dysarthria-asr",
-    "private": true,
-    "code_pushed": true
+    "private": false,
+    "code_pushed": true,
+    "anonymous_access_verified": true,
+    "complete_recorder_source": "recorder_app/"
   },
   "huggingface": {
     "stage": "complete",
@@ -13,13 +15,14 @@
     "model_repo": "Hossein-Dysarthria-Net/Shenava-Koochik-Hossein",
     "model_and_dataset_uploaded": true,
     "all_remote_files_sha256_verified": true,
-    "private": true,
-    "anonymous_access_denied": true,
-    "dataset_commit": "dd6d84ce4f534684d94ef14bdd6134c3ca934f48",
-    "model_commit": "f5c336338ba9fb98c7b5a16fead2840f6dfab24a",
+    "private": false,
+    "anonymous_access_denied": false,
+    "dataset_commit": "4d69bf9bb6ea28be8be697bcdceec93404fba00b",
+    "model_commit": "a2a0457e424c92df2e2a02e4c1e1cdfba60f1f49",
     "card_update_complete": true,
     "card_audio_preview_samples": 3,
-    "native_viewer_enabled": false,
-    "native_viewer_error": "NotSupportedPrivateRepositoryError"
+    "native_viewer_enabled": true,
+    "native_viewer_error": null,
+    "anonymous_access_allowed": true
   }
 }

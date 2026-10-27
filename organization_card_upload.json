@@ -5,14 +5,19 @@
   "sha256": "939974c21bb4089c51f05ff264f221d4df0c6255135785ce3408ed2b07a0f11a",
   "private": false,
   "verified": true,
-  "displayed_on_organization": false,
+  "displayed_on_organization": true,
   "stage": "published",
   "source": "cards/organization.md",
-  "checked_utc": "2026-10-27T08:53:12.002709+00:00",
+  "checked_utc": "2026-10-27T09:31:58.284780+00:00",
   "anonymous_readme_sha256_verified": true,
   "generated_space_template_removed": true,
   "organization_url": "https://huggingface.co/Hossein-Dysarthria-Net",
   "anonymous_page_status": 200,
-  "browser_render_verified": false,
-  "contact_details_published_as_requested": true
+  "browser_render_verified": true,
+  "contact_details_published_as_requested": true,
+  "clinical_explanations_source_links": [
+    "https://www.asha.org/practice-portal/clinical-topics/dysarthria-in-adults/",
+    "https://www.nidcd.nih.gov/health/apraxia-speech",
+    "https://www.nidcd.nih.gov/health/aphasia"
+  ]
 }
