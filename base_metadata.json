@@ -1,0 +1,41 @@
+{
+  "id": "Reza2kn/Shenava-Koochik-v1.5",
+  "sha": "53e43f94716c11dfc13fb0854a01b4c40ab57943",
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "d359f056973cbbe7957de4ac298e39cff148f952",
+      "size": 1641
+    },
+    {
+      "rfilename": "LICENSE",
+      "blobId": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "size": 11358
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "e25d92f945b1138ca425fd9c9c9911e8b40d82bd",
+      "size": 1662
+    },
+    {
+      "rfilename": "phaseA_rnnt_warmup.nemo",
+      "blobId": "5ff063f80aaadb5baa347f58a4e8fc023ea1fa01",
+      "size": 459683840,
+      "lfs": {
+        "sha256": "b38a39adeed668ea0332bcb25c97f6f8b7aa3cdf5f4d27691d9bb15f85a85656",
+        "size": 459683840,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "shenava-koochik-v1.5.nemo",
+      "blobId": "3eb073cea431071a44029b0f327d4bf307915ff6",
+      "size": 459683840,
+      "lfs": {
+        "sha256": "bd3712a3e90b34730b59ca0efe3b2b1e633d57f87cd3342c065aea243e9828df",
+        "size": 459683840,
+        "pointerSize": 134
+      }
+    }
+  ]
+}

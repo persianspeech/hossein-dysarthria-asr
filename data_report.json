@@ -1,0 +1,48 @@
+{
+  "source_clips": 510,
+  "accepted_clips": 510,
+  "rejected": [],
+  "total_hours": 1.94555,
+  "duration_seconds": {
+    "min": 4.08,
+    "max": 44.82
+  },
+  "splits": {
+    "train": {
+      "clips": 408,
+      "hours": 1.5424333333333333,
+      "manifest_sha256": "140711564f7aef402934c8dcf8439f7edba8646f5baf5a12130dd37b8e7363bb"
+    },
+    "validation": {
+      "clips": 51,
+      "hours": 0.18758333333333332,
+      "manifest_sha256": "7837150f8e0d2ad617147f1f098e80df24549f8562da9ac760ba3d04ce688f9f"
+    },
+    "test": {
+      "clips": 51,
+      "hours": 0.21553333333333333,
+      "manifest_sha256": "5ff482b598a39c5035255aa2126a5467829393ee3cc557171584fa7c44d9e963"
+    }
+  },
+  "source_manifest_sha256": "979f4a6144d6f977c76563b5eed2d891ff99cd8f5ba4f5fedd5f08b3e256fc95",
+  "exact_pcm_text_group_overlap": 0,
+  "connected_groups": 510,
+  "repeated_text_or_pcm_groups": 0,
+  "label_kind": "ASR-derived reference prompt, not verified transcription of Hossein",
+  "all_transferred_files_verified": true,
+  "audio": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "FLAC PCM16",
+    "full_utterances": true,
+    "trimmed": false
+  },
+  "split_scope": "single-speaker, utterance-disjoint; exact PCM/text groups remain together",
+  "limitations": [
+    "Single identified speaker; no unseen-speaker or independent-session claim.",
+    "Prompt labels originate from ASR of reference-speaker recordings, not verified Hossein transcripts.",
+    "No new manual audio/text validation; scores measure agreement with those prompts.",
+    "Only exact decoded PCM and normalized-text duplicates are controlled; near duplicates are not proven absent.",
+    "Historical training overlap of the base model with reference prompts is unknown."
+  ]
+}
