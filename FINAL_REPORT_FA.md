@@ -33,8 +33,8 @@ SHA256 مدل inference: `4d96d24f154b1dfbf23c5c8914274d339d1dfa2f4eadf23ff72500
 ## انتشار خصوصی
 
 کد: https://github.com/persianspeech/hossein-dysarthria-asr
-dataset: https://huggingface.co/datasets/Hossein-Dysarthria-Net/hossein-persian-speech — commit `72e3ec5da87fb5ba5c1fa283df397dfb30aeeac9`؛ تمام hashهای remote تأیید شد.
-model: https://huggingface.co/Hossein-Dysarthria-Net/Shenava-Koochik-Hossein — commit `d82afeea14ccce378643d20c14ef65ae920b47aa`؛ تمام hashهای remote تأیید شد.
+dataset: https://huggingface.co/datasets/Hossein-Dysarthria-Net/hossein-persian-speech — commit `dd6d84ce4f534684d94ef14bdd6134c3ca934f48`؛ تمام hashهای remote تأیید شد.
+model: https://huggingface.co/Hossein-Dysarthria-Net/Shenava-Koochik-Hossein — commit `f5c336338ba9fb98c7b5a16fead2840f6dfab24a`؛ تمام hashهای remote تأیید شد.
 
 نسخهٔ کامل اجرا و مدل روی 4090 در `/home/user01/hossein-dysarthria` محفوظ است.
 نسخهٔ انتشار در `hf_model/` و `hf_dataset/` قرار دارد.

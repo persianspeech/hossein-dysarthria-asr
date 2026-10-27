@@ -93,6 +93,15 @@ HOSSEIN_HF_TOKEN=... python publish_hf.py model
 برای ابزار انتشار، محیط جدا با `publisher-requirements.txt` بسازید؛ محیط آموزش
 با نسخه‌های دقیق `environment.freeze.txt` ثبت شده است.
 
+متن کارت‌ها در `cards/dataset.md` و `cards/model.md` نگه‌داری می‌شود؛ معرفی حسین
+و دعوت به حمایت داوطلبانه در `cards/hossein_story.fa.md` مشترک است. برای بازسازی
+کارت‌ها بدون اجرای دوبارهٔ آموزش یا صادرات مدل، `python update_release_cards.py`
+را اجرا کنید. این دستور سه صوت FLAC دقیقاً برابر با نمونه‌های آموزشی 1003، 1004 و
+1009 را در `hf_dataset/preview/` قرار می‌دهد و فهرست SHA256 انتشار را به‌روز می‌کند.
+فایل‌های Parquet و وزن‌های مدل تغییری نمی‌کنند. پیش‌نمایش در خود کارت شامل صوت،
+متن راهنما و مدت است؛ پیش‌نمایش جدولی خودکار مخزن خصوصی این سازمان فعلاً با خطای
+`NotSupportedPrivateRepositoryError` روبه‌رو است و به اشتراک Team/Enterprise نیاز دارد.
+
 ## مخزن‌ها
 
 - دادگان: https://huggingface.co/datasets/Hossein-Dysarthria-Net/hossein-persian-speech

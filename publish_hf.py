@@ -12,6 +12,7 @@ def main():
     parser.add_argument('kind',choices=['dataset','model'])
     parser.add_argument('--public',action='store_true',help='Explicitly request a public repository')
     parser.add_argument('--token-env',default='HOSSEIN_HF_TOKEN',help='Environment variable containing the publishing token')
+    parser.add_argument('--commit-message',default=None)
     args = parser.parse_args()
     config = read(ROOT/'run_config.json')
     folder = ROOT/('hf_dataset' if args.kind=='dataset' else 'hf_model')
@@ -41,7 +42,8 @@ def main():
             if item.rfilename in hashes and item.lfs:
                 assert item.lfs.sha256 == hashes[item.rfilename], 'Existing artifact differs'
     commit = api.upload_folder(repo_id=repo,repo_type=args.kind,folder_path=folder,
-                               ignore_patterns=['.cache/**'],commit_message='Add verified Hossein speech '+args.kind+' release')
+                               ignore_patterns=['.cache/**'],parent_commit=info.sha,
+                               commit_message=args.commit_message or 'Add verified Hossein speech '+args.kind+' release')
     remote = api.repo_info(repo,repo_type=args.kind,revision=commit.oid,files_metadata=True)
     assert remote.private == (not args.public)
     assert {s.rfilename for s in remote.siblings}==set(files)|{'.gitattributes'}
