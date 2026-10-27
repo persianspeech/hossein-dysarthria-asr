@@ -2,9 +2,11 @@
 
 **نتیجهٔ اجرای ۲۷ اکتبر ۲۰۲۶:** آموزش و ارزیابی تمام شد؛ مدل منتخب epoch 21 از
 ۲۵ epoch تکمیل‌شده است. WER تست CTC از ۸۷٫۸۷٪ به ۶۱٫۹۵٪ و CER از ۵۷٫۳۴٪
-به ۳۳٫۶۷٪ رسید. مدل و دادگان آماده‌اند؛ بارگذاری خصوصی در سازمان Hugging Face
-به دلیل نبود مجوز نوشتنِ توکن با 403 متوقف است. [گزارش نهایی](FINAL_REPORT_FA.md)
-و [وضعیت انتشار](publication_status.json) جزئیات را ثبت می‌کنند.
+به ۳۳٫۶۷٪ رسید. [مدل](https://huggingface.co/Hossein-Dysarthria-Net/Shenava-Koochik-Hossein)
+و [دادگان](https://huggingface.co/datasets/Hossein-Dysarthria-Net/hossein-persian-speech)
+به‌صورت خصوصی منتشر شدند؛ hash تمام فایل‌های remote تأیید شد و دسترسی بدون
+احراز هویت مسدود است. [گزارش نهایی](FINAL_REPORT_FA.md) و
+[وضعیت انتشار](publication_status.json) جزئیات را ثبت می‌کنند.
 
 پروژهٔ مستقل برای فاین‌تیون کامل `Reza2kn/Shenava-Koochik-v1.5` با صوت حسین.
 مدل FastConformer هیبرید RNNT/CTC، حدود ۱۱۴ میلیون پارامتر دارد.
@@ -82,8 +84,8 @@ LSTM که در این معماری غیرفعال است، صفر شده است�
 ```bash
 python transcribe.py recording.webm --model hf_model/shenava-hossein.nemo --head ctc
 python build_dataset_release.py
-HF_TOKEN=... python publish_hf.py dataset
-HF_TOKEN=... python publish_hf.py model
+HOSSEIN_HF_TOKEN=... python publish_hf.py dataset
+HOSSEIN_HF_TOKEN=... python publish_hf.py model
 ```
 
 انتشار پیش‌فرض خصوصی است. توکن فقط از محیط محلی خوانده می‌شود؛ فایل توکن

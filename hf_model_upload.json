@@ -1,0 +1,22 @@
+{
+  "repo_id": "Hossein-Dysarthria-Net/Shenava-Koochik-Hossein",
+  "repo_type": "model",
+  "commit": "d82afeea14ccce378643d20c14ef65ae920b47aa",
+  "private": true,
+  "all_remote_files_sha256_verified": true,
+  "files": 12,
+  "hashes": {
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "README.md": "f6266b6a98ee1aaea61e0da44e53ccc03af703566cdf345bd2f9a0843c09bcd4",
+    "data_report.json": "f783a7e493fefad5a8997c58019da9195188f3dbfeed9805f047591a24a39121",
+    "environment.freeze.txt": "1db9c5da2b3facf9206ffa175094ff1cb2256c25e9f2a878570c7e88f26c8dfe",
+    "evaluation.json": "0488cf13c270f7483e9cac7ee971c727a9ce3ddb616b6028b7dd2913ba314c78",
+    "release_hashes.json": "35119b0623d714c5ec1c8a5ddc89e9ac34bad87cdfd3d1a9a2f0d37802cdf85e",
+    "requirements.txt": "4d1caac5b80aa652dc0a47eb0fc4150bd288f5be0f903103380c4e5d41fce1d4",
+    "shenava-hossein.nemo": "4d96d24f154b1dfbf23c5c8914274d339d1dfa2f4eadf23ff725009a44d7f9c0",
+    "training_config.json": "d166f7943a95e28a6da7dcbd4e55911975731b4a2fb39065d00c81ca1f7b4a78",
+    "training_summary.json": "e7650dfd27848014f86d87b552ded176d5a646b70193d2146ce1353b415c54c7",
+    "transcribe.py": "9c400fa3048eb9b6da208b8ad1a06251a055a54dc182ee7cfe713c7fa1cea99b",
+    "validation.json": "9d8f52458b93eccd878354f5886bf398d3abd13dc47b8ce4b79371e7b991d0aa"
+  }
+}

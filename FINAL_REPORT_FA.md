@@ -33,8 +33,8 @@ SHA256 مدل inference: `4d96d24f154b1dfbf23c5c8914274d339d1dfa2f4eadf23ff72500
 ## انتشار خصوصی
 
 کد: https://github.com/persianspeech/hossein-dysarthria-asr
-dataset: بارگذاری انجام نشد؛ API سازمان مقصد خطای 403 داد. توکن فعلی مجوز نوشتن در سازمان Hossein-Dysarthria-Net را ندارد.
-model: بارگذاری انجام نشد؛ API سازمان مقصد خطای 403 داد. توکن فعلی مجوز نوشتن در سازمان Hossein-Dysarthria-Net را ندارد.
+dataset: https://huggingface.co/datasets/Hossein-Dysarthria-Net/hossein-persian-speech — commit `72e3ec5da87fb5ba5c1fa283df397dfb30aeeac9`؛ تمام hashهای remote تأیید شد.
+model: https://huggingface.co/Hossein-Dysarthria-Net/Shenava-Koochik-Hossein — commit `d82afeea14ccce378643d20c14ef65ae920b47aa`؛ تمام hashهای remote تأیید شد.
 
 نسخهٔ کامل اجرا و مدل روی 4090 در `/home/user01/hossein-dysarthria` محفوظ است.
-نسخهٔ آمادهٔ بارگذاری در `hf_model/` و `hf_dataset/` قرار دارد؛ کد خاموش یا معلق برای انتشار خودکار ساخته نشده است.
+نسخهٔ انتشار در `hf_model/` و `hf_dataset/` قرار دارد.

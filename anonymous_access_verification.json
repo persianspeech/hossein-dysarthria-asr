@@ -1,0 +1,14 @@
+{
+  "dataset": {
+    "status": 401,
+    "anonymous_access_denied": true,
+    "repo_id": "Hossein-Dysarthria-Net/hossein-persian-speech",
+    "commit": "72e3ec5da87fb5ba5c1fa283df397dfb30aeeac9"
+  },
+  "model": {
+    "status": 401,
+    "anonymous_access_denied": true,
+    "repo_id": "Hossein-Dysarthria-Net/Shenava-Koochik-Hossein",
+    "commit": "d82afeea14ccce378643d20c14ef65ae920b47aa"
+  }
+}

@@ -11,12 +11,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('kind',choices=['dataset','model'])
     parser.add_argument('--public',action='store_true',help='Explicitly request a public repository')
+    parser.add_argument('--token-env',default='HOSSEIN_HF_TOKEN',help='Environment variable containing the publishing token')
     args = parser.parse_args()
     config = read(ROOT/'run_config.json')
     folder = ROOT/('hf_dataset' if args.kind=='dataset' else 'hf_model')
     repo = config['dataset_repo' if args.kind=='dataset' else 'model_repo']
-    token = os.environ.get('HF_TOKEN')
-    assert token, 'Provide HF_TOKEN in the local environment'
+    token = os.environ.get(args.token_env)
+    assert token, f'Provide {args.token_env} in the local environment'
     api = HfApi(token=token)
     assert any(o['name']=='Hossein-Dysarthria-Net' for o in api.whoami()['orgs'])
     hashes = read(folder/'release_hashes.json')
