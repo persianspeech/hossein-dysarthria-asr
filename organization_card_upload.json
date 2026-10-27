@@ -1,11 +1,18 @@
 {
   "repo_id": "Hossein-Dysarthria-Net/README",
   "repo_type": "space",
-  "commit": "b9e43a4f74487ed6118ca51130eb64d5482a4b2b",
+  "commit": "1db6b08f421653f5ab9f1256db9367abefd53cb6",
   "sha256": "303b78a195b5ddc3008b73db0b1e3b2f34c3c63cb98f3a4ce863f466fffe14c5",
-  "private": true,
+  "private": false,
   "verified": true,
-  "displayed_on_organization": false,
-  "stage": "private_draft_pending_public_visibility_confirmation",
-  "source": "cards/organization.md"
+  "displayed_on_organization": true,
+  "stage": "published",
+  "source": "cards/organization.md",
+  "checked_utc": "2026-10-27T08:53:12.002709+00:00",
+  "anonymous_readme_sha256_verified": true,
+  "generated_space_template_removed": true,
+  "organization_url": "https://huggingface.co/Hossein-Dysarthria-Net",
+  "anonymous_page_status": 200,
+  "public_page_checked_for_private_contact_details": true,
+  "browser_render_verified": true
 }
