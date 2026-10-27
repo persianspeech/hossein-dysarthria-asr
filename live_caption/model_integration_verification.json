@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "samples": [
+    {
+      "id": "1016",
+      "duration": 16.8,
+      "inference_ms": 128,
+      "roundtrip_ms": 167,
+      "matches_export_evaluation": true
+    },
+    {
+      "id": "102",
+      "duration": 23.94,
+      "inference_ms": 79,
+      "roundtrip_ms": 83,
+      "matches_export_evaluation": true
+    },
+    {
+      "id": "1033",
+      "duration": 10.8,
+      "inference_ms": 78,
+      "roundtrip_ms": 79,
+      "matches_export_evaluation": true
+    }
+  ],
+  "model_sha256": "4d96d24f154b1dfbf23c5c8914274d339d1dfa2f4eadf23ff725009a44d7f9c0"
+}

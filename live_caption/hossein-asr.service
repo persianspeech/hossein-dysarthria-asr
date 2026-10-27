@@ -1,0 +1,20 @@
+[Unit]
+Description=Hossein tuned CTC live captions (private recorder bridge)
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/gooran/hossein-asr-live
+Environment=TOKENIZERS_PARALLELISM=false
+Environment=HF_HUB_DISABLE_IMPLICIT_TOKEN=1
+Environment=OMP_NUM_THREADS=4
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/gooran/agp-asr-nemotron-fa/.venv-shenava/bin/python /home/gooran/hossein-asr-live/asr_service.py --model /home/gooran/hossein-asr-live/shenava-hossein.nemo --host 172.19.0.1 --port 8791
+Restart=on-failure
+RestartSec=15
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+
+[Install]
+WantedBy=default.target

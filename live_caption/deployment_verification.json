@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-27T09:07:48.615687+00:00",
+  "base_url": "https://hossein.asr-gooyesh.ir",
+  "checks": {
+    "unauthenticated_requests_denied": true,
+    "selected_model_identity_verified": true,
+    "page_assets_and_navigation": true,
+    "existing_recorder_catalog_works": true,
+    "invalid_audio_rejected": true,
+    "audio_samples": [
+      {
+        "id": "1016",
+        "duration": 16.8,
+        "roundtrip_ms": 266,
+        "inference_ms": 75,
+        "matches_export_evaluation": true
+      },
+      {
+        "id": "102",
+        "duration": 23.94,
+        "roundtrip_ms": 280,
+        "inference_ms": 73,
+        "matches_export_evaluation": true
+      },
+      {
+        "id": "1033",
+        "duration": 10.8,
+        "roundtrip_ms": 193,
+        "inference_ms": 71,
+        "matches_export_evaluation": true
+      }
+    ],
+    "existing_reference_audio_works": true,
+    "model_service_active": true,
+    "model_service_enabled": true,
+    "model_listener_private_bridge_only": true,
+    "deployed_static_assets_sha256_match": true,
+    "original_recordings_preserved_during_deploy": 510
+  },
+  "microphone_hardware_tested": false,
+  "browser_microphone_flow_tested_with_virtual_input": true
+}

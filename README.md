@@ -104,6 +104,12 @@ HOSSEIN_HF_TOKEN=... python publish_hf.py model
 
 ## مخزن‌ها
 
+صفحهٔ تست زندهٔ صدای حسین روی سرور 3060 در
+[hossein.asr-gooyesh.ir/test-voice](https://hossein.asr-gooyesh.ir/test-voice) فعال است.
+با ورود به برنامه و اجازهٔ میکروفن، گفتار با وزن فاین‌تیون‌شده و سر CTC به شکل
+زیرنویس نمایش داده می‌شود. جزئیات نصب، آزمون‌ها و نگه‌داری در
+[live_caption/README.md](live_caption/README.md) آمده است.
+
 - دادگان: https://huggingface.co/datasets/Hossein-Dysarthria-Net/hossein-persian-speech
 - مدل: https://huggingface.co/Hossein-Dysarthria-Net/Shenava-Koochik-Hossein
 - کد: https://github.com/persianspeech/hossein-dysarthria-asr

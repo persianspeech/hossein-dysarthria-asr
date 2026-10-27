@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تست صدای حسین</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/hossein-test.css?v=1">
+</head>
+<body class="voice-page">
+  <header class="voice-header">
+    <a class="voice-back" href="/app">← بازگشت به ضبط صدا</a>
+    <span id="model-state" class="voice-model" role="status">در حال بررسی مدل…</span>
+  </header>
+  <main class="voice-main">
+    <div class="voice-intro">
+      <span class="voice-eyebrow">شنوا · صدای تو، نوشتهٔ تو</span>
+      <h1>تست صدای حسین</h1>
+      <p>روی میکروفن بزن و صحبت کن؛ نوشتهٔ حرف‌هایت اینجا ظاهر می‌شود.</p>
+    </div>
+    <section class="voice-captions" aria-label="زیرنویس گفتار" tabindex="0">
+      <div id="caption-empty" class="voice-empty">نوشتهٔ صحبت‌هایت اینجا می‌آید</div>
+      <div id="caption-history"></div>
+      <p id="caption-partial" class="voice-partial" aria-live="off"></p>
+    </section>
+    <div class="voice-controls">
+      <button id="voice-mic" class="voice-mic" type="button" aria-label="شروع میکروفن" aria-pressed="false" disabled>
+        <svg class="voice-mic-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/></svg>
+        <svg class="voice-stop-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14" rx="3"/></svg>
+        <span id="voice-mic-label">شروع صحبت</span>
+      </button>
+      <div class="voice-message"><p id="voice-status" role="status" aria-live="polite">کمی صبر کن…</p><span id="voice-time">۰۰:۰۰</span></div>
+      <div class="voice-actions">
+        <button id="voice-copy" type="button" class="ghost" disabled>کپی نوشته</button>
+        <button id="voice-clear" type="button" class="ghost" disabled>پاک کردن نوشته</button>
+      </div>
+    </div>
+    <p class="voice-note">این مدل با صدای حسین آموزش دیده است و ممکن است اشتباه کند. صدا و نوشتهٔ این صفحه به مجموعهٔ ضبط‌ها اضافه نمی‌شود.</p>
+  </main>
+  <script src="/static/hossein-capture.js?v=1"></script>
+  <script src="/static/hossein-test.js?v=1"></script>
+</body>
+</html>
