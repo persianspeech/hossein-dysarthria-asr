@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "base_sha256": "bd3712a3e90b34730b59ca0efe3b2b1e633d57f87cd3342c065aea243e9828df",
+  "native_tokenizer_preserved": true,
+  "parameters": 114752514,
+  "unknown_id": 0,
+  "unknown_token_clips": [],
+  "splits": {
+    "train": {
+      "clips": 408,
+      "tokens": 7601,
+      "max_tokens": 51
+    },
+    "validation": {
+      "clips": 51,
+      "tokens": 951,
+      "max_tokens": 38
+    },
+    "test": {
+      "clips": 51,
+      "tokens": 1048,
+      "max_tokens": 40
+    }
+  },
+  "hybrid_modules_present": true
+}
