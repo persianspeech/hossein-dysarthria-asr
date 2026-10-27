@@ -59,7 +59,7 @@ near-duplicate and historical base-training overlap are not established.
 ## Inference
 
 Install the pinned environment (`environment.freeze.txt`; the tested runtime is
-NeMo 3.0.0 and PyTorch 2.11.0+cu126). Authenticate for a private repository.
+NeMo 3.0.0 and PyTorch 2.11.0+cu126). This repository is public; authentication is not required to download the model.
 
 ```bash
 python transcribe.py recording.wav --head ctc

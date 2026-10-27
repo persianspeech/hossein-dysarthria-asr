@@ -4,12 +4,14 @@
 ۲۵ epoch تکمیل‌شده است. WER تست CTC از ۸۷٫۸۷٪ به ۶۱٫۹۵٪ و CER از ۵۷٫۳۴٪
 به ۳۳٫۶۷٪ رسید. [مدل](https://huggingface.co/Hossein-Dysarthria-Net/Shenava-Koochik-Hossein)
 و [دادگان](https://huggingface.co/datasets/Hossein-Dysarthria-Net/hossein-persian-speech)
-به‌صورت خصوصی منتشر شدند؛ hash تمام فایل‌های remote تأیید شد و دسترسی بدون
-احراز هویت مسدود است. [گزارش نهایی](FINAL_REPORT_FA.md) و
+به‌صورت عمومی در دسترس هستند؛ hash تمام فایل‌های remote تأیید شد.
+برای دریافت منابع به ورود نیاز نیست. [گزارش نهایی](FINAL_REPORT_FA.md) و
 [وضعیت انتشار](publication_status.json) جزئیات را ثبت می‌کنند.
 
 پروژهٔ مستقل برای فاین‌تیون کامل `Reza2kn/Shenava-Koochik-v1.5` با صوت حسین.
 مدل FastConformer هیبرید RNNT/CTC، حدود ۱۱۴ میلیون پارامتر دارد.
+کد کامل رابط دریافت صدا و اسکریپت‌های آماده‌سازی آن نیز در
+[recorder_app](recorder_app/README.md) منتشر شده است.
 
 ## داده و برچسب
 
@@ -84,11 +86,14 @@ LSTM که در این معماری غیرفعال است، صفر شده است�
 ```bash
 python transcribe.py recording.webm --model hf_model/shenava-hossein.nemo --head ctc
 python build_dataset_release.py
-HOSSEIN_HF_TOKEN=... python publish_hf.py dataset
-HOSSEIN_HF_TOKEN=... python publish_hf.py model
+HOSSEIN_HF_TOKEN=... python publish_hf.py dataset --public
+HOSSEIN_HF_TOKEN=... python publish_hf.py model --public
 ```
 
-انتشار پیش‌فرض خصوصی است. توکن فقط از محیط محلی خوانده می‌شود؛ فایل توکن
+انتشار این پروژه عمومی است؛ `publication_config.json` تنظیم کارت‌ها و گزارش را
+مشخص می‌کند و گزینهٔ `--public` در ابزار انتشار باید صریحاً داده شود.
+تنظیمات آموزش اصلی در `run_config.json` حفظ شده‌اند.
+توکن نوشتن فقط از محیط محلی خوانده می‌شود؛ فایل توکن
 ساخته نمی‌شود. انتشار با بررسی SHA256 تمام فایل‌های remote تکمیل می‌شود.
 برای ابزار انتشار، محیط جدا با `publisher-requirements.txt` بسازید؛ محیط آموزش
 با نسخه‌های دقیق `environment.freeze.txt` ثبت شده است.
@@ -99,8 +104,8 @@ HOSSEIN_HF_TOKEN=... python publish_hf.py model
 را اجرا کنید. این دستور سه صوت FLAC دقیقاً برابر با نمونه‌های آموزشی 1003، 1004 و
 1009 را در `hf_dataset/preview/` قرار می‌دهد و فهرست SHA256 انتشار را به‌روز می‌کند.
 فایل‌های Parquet و وزن‌های مدل تغییری نمی‌کنند. پیش‌نمایش در خود کارت شامل صوت،
-متن راهنما و مدت است؛ پیش‌نمایش جدولی خودکار مخزن خصوصی این سازمان فعلاً با خطای
-`NotSupportedPrivateRepositoryError` روبه‌رو است و به اشتراک Team/Enterprise نیاز دارد.
+متن راهنما و مدت است؛ [پیش‌نمایش جدولی Hugging Face](https://huggingface.co/datasets/Hossein-Dysarthria-Net/hossein-persian-speech/viewer/default/train)
+نیز برای مرور ردیف‌ها و شنیدن صوت در دسترس است.
 
 ## مخزن‌ها
 

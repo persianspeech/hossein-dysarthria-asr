@@ -1,12 +1,12 @@
 {
   "repo_id": "Hossein-Dysarthria-Net/hossein-persian-speech",
   "repo_type": "dataset",
-  "commit": "dd6d84ce4f534684d94ef14bdd6134c3ca934f48",
-  "private": true,
+  "commit": "4d69bf9bb6ea28be8be697bcdceec93404fba00b",
+  "private": false,
   "all_remote_files_sha256_verified": true,
   "files": 11,
   "hashes": {
-    "README.md": "c6d47c502088d8c7b90f587401d8c55e643a95576d1fa1d1a5ec04ec151414dd",
+    "README.md": "9aab6b00812980cac555e94d5028160c8aab62cfa8cbc28f8a1c430b707f53dd",
     "data/test-00000-of-00001.parquet": "22ac1baed9480d35d29fe1773762a050df1d07e1bf64f53f599ba1a78e31c3cb",
     "data/train-00000-of-00001.parquet": "8e6214e8e71f2bb6884d7b78d9505c42f11d770dc1a63aaba6a6afa85739af31",
     "data/validation-00000-of-00001.parquet": "a7aa8d7fed0db11dd0d21a08ec8f2b656d4b9b3a2f4ccdc3e786974551dba04d",
@@ -15,7 +15,7 @@
     "preview/1004.flac": "cb11699ceb875c5334bd050d06f518ad62d942f2a31b8525d4d63c3f8de815b0",
     "preview/1009.flac": "e13e5f0f0059dcac79d52bd1e1b409acff1786a4643a2e1eb71289ac1a0de00b",
     "preview/samples.json": "4eed277126e7955d82a6ae30f3c6d43d6ca9de653f91bd8ec5deaa5aff85e6f1",
-    "release_hashes.json": "fc78618be00f27dcf6a72dc40c98191bda51a0a35df5c9410b831216242a88a3",
+    "release_hashes.json": "15e1d65c4ae1c7fc6c9970b532098951406c2e9e77bc862de26a6f7384d73b0b",
     "source_manifest.json": "979f4a6144d6f977c76563b5eed2d891ff99cd8f5ba4f5fedd5f08b3e256fc95"
   }
 }

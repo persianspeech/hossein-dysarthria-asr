@@ -1,0 +1,19 @@
+services:
+  recorder:
+    build: .
+    image: saremi-recorder
+    ports:
+      - "8765:8765"
+    environment:
+      HOSSEIN_ASR_URL: http://172.19.0.1:8791
+      REF_DIR: /data/opus
+      PHSEQ: /data/txt.phseq.data
+      TEXT_JSON: /app/data/shenava_texts.json
+      REC_ROOT: /recordings
+    volumes:
+      - ../SaremiData/DataBase/opus:/data/opus:ro
+      - ../SaremiData/DataBase/txt.phseq.data:/data/txt.phseq.data:ro
+      - ./data/shenava_texts.json:/app/data/shenava_texts.json:ro
+      - ./recordings:/recordings
+      - ./users.json:/app/users.json:ro
+    restart: unless-stopped

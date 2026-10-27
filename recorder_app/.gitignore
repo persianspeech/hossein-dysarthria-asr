@@ -1,0 +1,8 @@
+users.json
+shenava.env
+.env
+data/
+recordings/
+__pycache__/
+*.pyc
+*.log

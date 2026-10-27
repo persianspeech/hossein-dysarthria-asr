@@ -4,6 +4,8 @@ from common import ROOT, read
 result=read(ROOT/'final_results.json')
 training=read(ROOT/'training_completed.json')
 validation=read(ROOT/'release_validation.json')
+publication=ROOT/'publication_config.json'
+public=publication.exists() and read(publication).get('visibility')=='public'
 assert validation['passed'] and not result['test_used_for_selection']
 lines=['# گزارش فاین‌تیون شنوا کوچک برای حسین','',
        'مدل پایه: `Reza2kn/Shenava-Koochik-v1.5`، با ۱۱۴٬۷۵۲٬۵۱۴ پارامتر؛ تمام پارامترها آموزش دیده‌اند.',
@@ -31,13 +33,13 @@ lines+=['','## اعتبار نتیجه','',
         'forward/backward واقعی و تغییر encoder، RNNT و CTC تأیید شد. بازیابی optimizer و RNG در پردازش تازه، loss یکسان با اجرای پیوسته داشت.',
         'مدل inference پاک‌سازی شد؛ همهٔ tensorها با checkpoint منتخب برابر بودند و پس از reload، خروجی سه فایل تست در هر دو سر دقیقاً مطابق خروجی ارزیابی بود.',
         f"SHA256 مدل inference: `{validation['exported_model_sha256']}`.",
-        '', '## انتشار خصوصی','',
+        '', '## انتشار عمومی' if public else '## انتشار خصوصی','',
         'کد: https://github.com/persianspeech/hossein-dysarthria-asr']
 for kind in ['dataset','model']:
     receipt=ROOT/f'hf_{kind}_upload.json'
     if receipt.exists():
         value=read(receipt)
-        assert value['private'] and value['all_remote_files_sha256_verified']
+        assert value['private']==(not public) and value['all_remote_files_sha256_verified']
         prefix='datasets/' if kind=='dataset' else ''
         lines.append(f"{kind}: https://huggingface.co/{prefix}{value['repo_id']} — commit `{value['commit']}`؛ تمام hashهای remote تأیید شد.")
     else:

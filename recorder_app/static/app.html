@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ضبط صدا</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
+    <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3Z"/><path d="M19 11a7 7 0 0 1-14 0M12 18v3"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path d="M18 6v12L8 12 18 6Z"/><path d="M6 6v12"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="M6 6v12l10-6L6 6Z"/><path d="M18 6v12"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V5h6v2M7 7l1 13h8l1-13"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 9.5 17 19 7"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M10 7V5H5v14h5v-2M10 12h9M16 9l3 3-3 3"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 7h11M9 12h11M9 17h11M4 7h.01M4 12h.01M4 17h.01"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v5l3 2"/></symbol>
+    <symbol id="i-done" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24"><path d="M3 12h2M7 8v8M11 5v14M15 8v8M19 12h2"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 19c1.4-3 3.8-4.5 7-4.5S17.6 16 19 19"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7V3Z"/><path d="M14 3v5h5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4 3 20h18L12 4Z"/><path d="M12 10v5M12 17.5h.01"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  </svg>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"><svg><use href="#i-mic"></use></svg></span>
+        <div>
+          <strong>ضبط صدای گوینده</strong>
+          <span class="muted">مرجع: خانم صارمی</span>
+        </div>
+      </div>
+      <div class="topbar-meta">
+        <span class="pill" id="progress"><svg><use href="#i-done"></use></svg><span>۰ / ۰</span></span>
+        <span class="who"><svg><use href="#i-user"></use></svg><b id="who"></b></span>
+        <button type="button" id="logout" class="ghost"><svg><use href="#i-logout"></use></svg>خروج</button>
+      </div>
+    </header>
+
+    <aside class="rail">
+      <div class="rail-tools">
+        <a href="/test-voice" class="ghost" style="color:var(--accent);text-decoration:none;min-height:48px">تست صدای حسین</a>
+        <label class="search-wrap">
+          <svg><use href="#i-search"></use></svg>
+          <input id="filter" class="search" placeholder="شماره فایل…" inputmode="numeric" autocomplete="off">
+        </label>
+        <div class="seg" role="tablist">
+          <button type="button" id="filter-all" class="seg-btn is-on" data-mode="all"><svg><use href="#i-list"></use></svg>همه</button>
+          <button type="button" id="filter-missing" class="seg-btn" data-mode="missing"><svg><use href="#i-clock"></use></svg>نشده</button>
+          <button type="button" id="filter-done" class="seg-btn" data-mode="done"><svg><use href="#i-done"></use></svg>شده</button>
+        </div>
+      </div>
+      <div id="list" class="list" role="listbox" aria-label="فهرست فایل‌ها"></div>
+    </aside>
+
+    <main class="stage">
+      <section class="panel" id="workspace">
+        <div class="panel-head">
+          <span class="file-chip"><svg><use href="#i-file"></use></svg>فایل <b id="utt-id">—</b></span>
+          <span id="state-pill" class="state-pill">—</span>
+        </div>
+
+        <blockquote id="script" class="script">…</blockquote>
+
+        <div class="deck">
+          <div class="track">
+            <div class="track-label">
+              <span class="track-ico ref"><svg><use href="#i-wave"></use></svg></span>
+              مرجع
+            </div>
+            <audio id="reference" controls preload="none"></audio>
+          </div>
+          <div class="track">
+            <div class="track-label">
+              <span class="track-ico mine"><svg><use href="#i-mic"></use></svg></span>
+              صدای شما
+            </div>
+            <audio id="take" controls preload="none"></audio>
+          </div>
+        </div>
+
+        <div class="transport">
+          <button type="button" id="prev" class="nav"><svg><use href="#i-prev"></use></svg>قبلی</button>
+          <button type="button" id="record" class="rec" aria-pressed="false">
+            <svg class="ico-mic"><use href="#i-mic"></use></svg>
+            <svg class="ico-stop"><use href="#i-stop"></use></svg>
+            <span id="record-label">ضبط</span>
+          </button>
+          <button type="button" id="next" class="nav"><svg><use href="#i-next"></use></svg>بعدی</button>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="discard" class="danger" disabled><svg><use href="#i-trash"></use></svg>پاک کردن</button>
+          <button type="button" id="confirm" class="confirm" disabled><svg><use href="#i-check"></use></svg>تأیید و بعدی</button>
+        </div>
+
+        <p id="status" class="status" role="status"></p>
+      </section>
+    </main>
+  </div>
+
+  <div id="discard-modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="discard-title">
+      <div class="modal-ico" aria-hidden="true"><svg><use href="#i-alert"></use></svg></div>
+      <h2 id="discard-title">پاک کردن ضبط؟</h2>
+      <p id="discard-text" class="muted">صدای ضبط‌شدهٔ این فایل حذف می‌شود و برنمی‌گردد.</p>
+      <div class="modal-actions">
+        <button type="button" id="discard-cancel" class="ghost"><svg><use href="#i-close"></use></svg>انصراف</button>
+        <button type="button" id="discard-ok" class="danger solid"><svg><use href="#i-trash"></use></svg>پاک شود</button>
+      </div>
+    </div>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

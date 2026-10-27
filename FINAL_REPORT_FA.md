@@ -30,11 +30,11 @@ forward/backward واقعی و تغییر encoder، RNNT و CTC تأیید شد.
 مدل inference پاک‌سازی شد؛ همهٔ tensorها با checkpoint منتخب برابر بودند و پس از reload، خروجی سه فایل تست در هر دو سر دقیقاً مطابق خروجی ارزیابی بود.
 SHA256 مدل inference: `4d96d24f154b1dfbf23c5c8914274d339d1dfa2f4eadf23ff725009a44d7f9c0`.
 
-## انتشار خصوصی
+## انتشار عمومی
 
 کد: https://github.com/persianspeech/hossein-dysarthria-asr
-dataset: https://huggingface.co/datasets/Hossein-Dysarthria-Net/hossein-persian-speech — commit `dd6d84ce4f534684d94ef14bdd6134c3ca934f48`؛ تمام hashهای remote تأیید شد.
-model: https://huggingface.co/Hossein-Dysarthria-Net/Shenava-Koochik-Hossein — commit `f5c336338ba9fb98c7b5a16fead2840f6dfab24a`؛ تمام hashهای remote تأیید شد.
+dataset: https://huggingface.co/datasets/Hossein-Dysarthria-Net/hossein-persian-speech — commit `4d69bf9bb6ea28be8be697bcdceec93404fba00b`؛ تمام hashهای remote تأیید شد.
+model: https://huggingface.co/Hossein-Dysarthria-Net/Shenava-Koochik-Hossein — commit `a2a0457e424c92df2e2a02e4c1e1cdfba60f1f49`؛ تمام hashهای remote تأیید شد.
 
 نسخهٔ کامل اجرا و مدل روی 4090 در `/home/user01/hossein-dysarthria` محفوظ است.
 نسخهٔ انتشار در `hf_model/` و `hf_dataset/` قرار دارد.

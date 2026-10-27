@@ -67,7 +67,7 @@ No additional dataset license is granted by this card.
 
 ```python
 from datasets import load_dataset, Audio
-ds = load_dataset("Hossein-Dysarthria-Net/hossein-persian-speech", token=True)
+ds = load_dataset("Hossein-Dysarthria-Net/hossein-persian-speech")
 # Access the embedded bytes without requiring a decoder:
 raw = ds["test"].cast_column("audio", Audio(decode=False))
 print(raw[0]["text"], raw[0]["audio"]["path"])

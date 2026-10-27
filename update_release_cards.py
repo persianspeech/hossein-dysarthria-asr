@@ -10,7 +10,7 @@ from common import ROOT, read, write, sha
 PREVIEW_IDS = ('1003', '1004', '1009')
 
 
-def dataset_preview(folder):
+def dataset_preview(folder, public=False):
     import pyarrow.parquet as pq
     items = pq.read_table(folder/'data/train-00000-of-00001.parquet').to_pylist()
     selected = {r['id']: r for r in items if r['id'] in PREVIEW_IDS}
@@ -19,6 +19,7 @@ def dataset_preview(folder):
     preview.mkdir(exist_ok=True)
     lines = ['## پیش‌نمایش داده‌ها', '',
              'سه نمونهٔ زیر از بخش **آموزش (train)** انتخاب شده‌اند. صوت، صدای حسین است؛ متن کنار آن همان جملهٔ راهنمای ضبط است و رونویسی انسانیِ تأییدشدهٔ آنچه شنیده می‌شود نیست.', '',
+             'این دادگان عمومی است؛ برای شنیدن یا دریافت نمونه‌ها نیازی به ورود نیست.' if public else
              'برای پخش یا دریافت صوت باید با حساب دارای دسترسی به این مخزن خصوصی وارد Hugging Face شده باشید.', '']
     manifest = []
     for identifier in PREVIEW_IDS:
@@ -36,7 +37,10 @@ def dataset_preview(folder):
         manifest.append({k: row[k] for k in ('id','text','duration','audio_sha256','label_kind','human_verified')}
                         | {'split':'train','path':name})
     write(preview/'samples.json', manifest)
-    lines += ['پیش‌نمایش جدولی خودکار (Dataset Viewer / Data Studio) برای مخزن خصوصی این سازمان در اشتراک فعلی فعال نیست. طبق [مستندات Hugging Face](https://huggingface.co/docs/hub/enterprise-datasets)، این قابلیت برای سازمان‌های دارای اشتراک Team یا Enterprise ارائه می‌شود. نمونه‌های بالا برای مرور مستقیم در کارت دادگان قرار گرفته‌اند.', '']
+    if public:
+        lines += ['برای مرور جدول داده‌ها و پخش صوت هر ردیف، بخش [Dataset Viewer](https://huggingface.co/datasets/Hossein-Dysarthria-Net/hossein-persian-speech/viewer/default/train) را باز کنید. نمونه‌های بالا نیز مستقیماً در کارت دادگان قابل‌دسترسی‌اند.', '']
+    else:
+        lines += ['پیش‌نمایش جدولی خودکار (Dataset Viewer / Data Studio) برای مخزن خصوصی این سازمان در اشتراک فعلی فعال نیست. طبق [مستندات Hugging Face](https://huggingface.co/docs/hub/enterprise-datasets)، این قابلیت برای سازمان‌های دارای اشتراک Team یا Enterprise ارائه می‌شود. نمونه‌های بالا برای مرور مستقیم در کارت دادگان قرار گرفته‌اند.', '']
     return '\n'.join(lines)
 
 
@@ -49,7 +53,9 @@ def render(root, kind):
         replacements['{{SPLIT_TABLE}}'] = '\n'.join(
             f"| {s} | {report['splits'][s]['clips']} | {report['splits'][s]['hours']:.5f} |"
             for s in ('train','validation','test'))
-        replacements['{{PREVIEW}}'] = dataset_preview(folder)
+        publication = root/'publication_config.json'
+        public = publication.exists() and read(publication).get('visibility') == 'public'
+        replacements['{{PREVIEW}}'] = dataset_preview(folder, public=public)
     else:
         results = read(folder/'evaluation.json')
         table = []
