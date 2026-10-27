@@ -15,7 +15,13 @@ for path in (venv/'bin').iterdir():
         if data.startswith(b'#!/home/gooran/agp-asr-nemotron-fa/.venv-shenava/bin/python'):
             first,rest=data.split(b'\n',1)
             path.write_bytes(('#!'+str(python)+'\n').encode()+rest)
-subprocess.run([str(python),'-m','pip','install','--timeout','120','jiwer','imageio-ffmpeg'],check=True)
+packages=['jiwer==4.0.0','imageio-ffmpeg==0.6.0']
+install=[str(python),'-m','pip','install']
+if (root/'wheelhouse').exists():
+    install+=['--no-index','--find-links',str(root/'wheelhouse')]
+else:
+    install+=['--timeout','120']
+subprocess.run([*install,*packages],check=True)
 probe='''import torch, json, importlib.metadata as m
 from nemo.collections.asr.models import ASRModel
 assert torch.cuda.is_available()

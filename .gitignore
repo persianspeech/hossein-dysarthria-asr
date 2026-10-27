@@ -20,3 +20,4 @@ ENV_READY
 gpu-hold.log
 .cache/
 local-receipts/
+wheelhouse/

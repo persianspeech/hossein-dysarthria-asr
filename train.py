@@ -47,6 +47,7 @@ def setrng(value):
 def identity():
     return dict(base_sha256=sha(BASE), config_sha256=sha(ROOT/'run_config.json'),
                 code_sha256=sha(Path(__file__)), common_sha256=sha(ROOT/'common.py'),
+                environment_sha256=sha(ROOT/'environment.freeze.txt'),
                 manifests={split:sha(ROOT/f'dataset/{split}.jsonl') for split in ['train','validation','test']})
 
 
