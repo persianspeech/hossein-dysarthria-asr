@@ -32,11 +32,19 @@ print(json.dumps(out,ensure_ascii=False))
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--host',default='rtx4090')
+    parser.add_argument('--compact',action='store_true')
     args=parser.parse_args()
     result=subprocess.run(['ssh','-o','BatchMode=yes','-o','ConnectTimeout=15',args.host,'python3 -'],
                           input=SCRIPT,capture_output=True,text=True,encoding='utf-8',check=True)
     value=json.loads(result.stdout)
     write(ROOT/'live_status.json',value)
+    if args.compact:
+        keys=['pipeline_status.json','status.json','recent_history','training_completed.json',
+              'final_results.json','release_validation.json','pipeline_process_alive','gpu']
+        compact={k:value[k] for k in keys if k in value}
+        if value.get('pipeline_status.json',{}).get('state')=='failed':
+            compact['log_tail']=value.get('log_tail')
+        value=compact
     print(json.dumps(value,ensure_ascii=False),flush=True)
 
 

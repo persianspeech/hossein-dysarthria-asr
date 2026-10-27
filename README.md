@@ -1,7 +1,7 @@
 # سازگارسازی شنوا کوچک با گفتار حسین
 
 پروژهٔ مستقل برای فاین‌تیون کامل `Reza2kn/Shenava-Koochik-v1.5` با صوت حسین.
-مدل FastConformer هیبرید RNNT/CTC، حدود ۱۱۴ میلیون پارامتر دارد؛ این پروژه Whisper نیست.
+مدل FastConformer هیبرید RNNT/CTC، حدود ۱۱۴ میلیون پارامتر دارد.
 
 ## داده و برچسب
 
@@ -45,6 +45,7 @@ python export_source.py --source /path/to/recorder --output /path/to/new-snapsho
 # run_config.json و اسکریپت‌ها را کنار raw/ و source_manifest.json قرار دهید.
 python prepare.py --root /path/to/new-snapshot
 python verify_data.py
+python download_base.py
 HOSSEIN_PYTHON=.venv/bin/python bash run_pipeline.sh
 ```
 
@@ -81,6 +82,8 @@ HF_TOKEN=... python publish_hf.py model
 
 انتشار پیش‌فرض خصوصی است. توکن فقط از محیط محلی خوانده می‌شود؛ فایل توکن
 ساخته نمی‌شود. انتشار با بررسی SHA256 تمام فایل‌های remote تکمیل می‌شود.
+برای ابزار انتشار، محیط جدا با `publisher-requirements.txt` بسازید؛ محیط آموزش
+با نسخه‌های دقیق `environment.freeze.txt` ثبت شده است.
 
 ## مخزن‌ها
 
