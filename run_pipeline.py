@@ -5,6 +5,7 @@ import os
 import subprocess
 import sys
 import traceback
+from pathlib import Path
 from common import ROOT, write, read
 from datetime import datetime, timezone
 
@@ -21,6 +22,15 @@ def main():
     os.environ.setdefault('TOKENIZERS_PARALLELISM','false')
     os.environ.setdefault('HF_HUB_DISABLE_IMPLICIT_TOKEN','1')
     os.environ.setdefault('OMP_NUM_THREADS','4')
+    # Keep NVVM, libdevice and nvJitLink aligned with torch's CUDA 12.6;
+    # the host also has a system CUDA 13 toolkit installed.
+    nvidia=Path(python).parent.parent/'lib/python3.12/site-packages/nvidia'
+    nvcc=nvidia/'cuda_nvcc'
+    if nvcc.is_dir():
+        os.environ['CUDA_HOME']=str(nvcc)
+        os.environ['CUDA_PATH']=str(nvcc)
+        libraries=[nvcc/'nvvm/lib64',nvidia/'nvjitlink/lib',nvidia/'cuda_runtime/lib']
+        os.environ['LD_LIBRARY_PATH']=':'.join(str(p) for p in libraries)+':'+os.environ.get('LD_LIBRARY_PATH','')
     stage='starting'
     def record(state,**kwargs):
         write(ROOT/'pipeline_status.json',dict(utc=datetime.now(timezone.utc).isoformat(),

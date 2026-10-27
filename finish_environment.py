@@ -15,7 +15,8 @@ for path in (venv/'bin').iterdir():
         if data.startswith(b'#!/home/gooran/agp-asr-nemotron-fa/.venv-shenava/bin/python'):
             first,rest=data.split(b'\n',1)
             path.write_bytes(('#!'+str(python)+'\n').encode()+rest)
-packages=['jiwer==4.0.0','imageio-ffmpeg==0.6.0']
+packages=['jiwer==4.0.0','imageio-ffmpeg==0.6.0','numba-cuda==0.30.4','cuda-core==0.5.1',
+          'numpy==2.2.6','nvidia-cuda-nvcc-cu12==12.6.85']
 install=[str(python),'-m','pip','install']
 if (root/'wheelhouse').exists():
     install+=['--no-index','--find-links',str(root/'wheelhouse')]

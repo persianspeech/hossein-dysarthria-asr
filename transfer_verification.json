@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "source_files": 511,
+  "decoded_files": 510,
+  "source_manifest_sha256": "979f4a6144d6f977c76563b5eed2d891ff99cd8f5ba4f5fedd5f08b3e256fc95",
+  "manifest_sha256": {
+    "train": "140711564f7aef402934c8dcf8439f7edba8646f5baf5a12130dd37b8e7363bb",
+    "validation": "7837150f8e0d2ad617147f1f098e80df24549f8562da9ac760ba3d04ce688f9f",
+    "test": "5ff482b598a39c5035255aa2126a5467829393ee3cc557171584fa7c44d9e963"
+  },
+  "cross_split_exact_overlap": 0
+}

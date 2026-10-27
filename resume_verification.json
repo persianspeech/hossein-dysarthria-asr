@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "separate_process": true,
+  "loss": [
+    205.478271484375,
+    195.0643310546875,
+    229.7774658203125
+  ],
+  "expected_loss": [
+    205.478271484375,
+    195.0643310546875,
+    229.7774658203125
+  ],
+  "optimizer_and_rng_restored": true
+}

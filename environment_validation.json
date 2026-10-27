@@ -1,1 +1,20 @@
-{"cuda_available": true, "gpu": "NVIDIA GeForce RTX 4090", "packages": {"torch": "2.11.0+cu126", "torchaudio": "2.11.0+cu126", "nemo_toolkit": "3.0.0", "lightning": "2.4.0", "transformers": "5.19.0", "numpy": "2.5.4", "numba": "0.68.0", "jiwer": "4.0.0", "imageio-ffmpeg": "0.6.0"}}
+{
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "packages": {
+    "torch": "2.11.0+cu126",
+    "torchaudio": "2.11.0+cu126",
+    "nemo_toolkit": "3.0.0",
+    "lightning": "2.4.0",
+    "transformers": "5.19.0",
+    "numpy": "2.2.6",
+    "numba": "0.68.0",
+    "numba-cuda": "0.30.4",
+    "cuda-core": "0.5.1",
+    "nvidia-cuda-nvcc-cu12": "12.6.85",
+    "jiwer": "4.0.0",
+    "imageio-ffmpeg": "0.6.0"
+  },
+  "native_hybrid_training_smoke_passed": true,
+  "cuda_toolchain": "Pinned pip CUDA 12.6 NVVM/libdevice/nvJitLink; system CUDA 13 excluded by launcher paths"
+}

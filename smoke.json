@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "all_parameters_trainable": true,
+  "parameters": 114752514,
+  "probes_updated": {
+    "encoder.layers.0.self_attn.linear_q.weight": true,
+    "decoder.prediction.embed.weight": true,
+    "ctc_decoder.decoder_layers.0.weight": true
+  },
+  "worst_clips": [
+    {
+      "id": "1254",
+      "duration": 44.82,
+      "tokens": 51
+    },
+    {
+      "id": "1099",
+      "duration": 39.06,
+      "tokens": 49
+    },
+    {
+      "id": "1088",
+      "duration": 40.32,
+      "tokens": 45
+    }
+  ],
+  "results": [
+    {
+      "loss": [
+        205.39724731445312,
+        196.37933349609375,
+        226.43902587890625
+      ],
+      "grad_norm": 711.4756469726562,
+      "lr": 1e-05
+    },
+    {
+      "loss": [
+        216.44744873046875,
+        194.3313751220703,
+        268.0516052246094
+      ],
+      "grad_norm": 666.2781982421875,
+      "lr": 1e-05
+    },
+    {
+      "loss": [
+        168.46958923339844,
+        142.34124755859375,
+        229.4357147216797
+      ],
+      "grad_norm": 712.6212768554688,
+      "lr": 1e-05
+    }
+  ],
+  "peak_reserved_gib": 3.072265625
+}

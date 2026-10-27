@@ -63,6 +63,13 @@ def load_model(path=BASE, training=False):
             model.cfg.aux_ctc.ctc_loss_weight = CFG['ctc_weight']
             model.cfg.spec_augment = OmegaConf.create({'_target_':'nemo.collections.asr.modules.SpectrogramAugmentation', **spec})
         model.spec_augmentation = SpectrogramAugmentation(**spec)
+        # This predictor has one recurrent layer, so cuDNN's inter-layer
+        # dropout is inactive. Set that inactive flag to zero to avoid its
+        # first-call private RNG initialization shifting the replay stream.
+        # NeMo's separate output Dropout module remains unchanged.
+        for module in model.decoder.modules():
+            if isinstance(module,torch.nn.LSTM) and module.num_layers == 1:
+                module.dropout = 0.0
         model.joint.set_fuse_loss_wer(True, loss=model.loss, metric=model.wer)
         model.joint.set_fused_batch_size(1)
     return model.cuda().train(training)
@@ -163,7 +170,7 @@ def smoke(resume=False):
         restore(ROOT/'checkpoints/smoke.pt', model, opt)
         result = update(model, opt, hardest[:1], CFG['learning_rate'])
         expected = torch.load(ROOT/'checkpoints/smoke_expected.pt', map_location='cpu', weights_only=False)
-        assert np.allclose(result['loss'], expected['result']['loss'], rtol=1e-5, atol=1e-5)
+        assert np.allclose(result['loss'], expected['result']['loss'], rtol=1e-5, atol=1e-5), (result['loss'],expected['result']['loss'])
         for name, param in probes(model).items():
             assert torch.allclose(param.detach().cpu(), expected['probes'][name], rtol=1e-6, atol=1e-7), name
         write(ROOT/'resume_verification.json', dict(passed=True, separate_process=True,
