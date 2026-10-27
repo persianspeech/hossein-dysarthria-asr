@@ -1,0 +1,28 @@
+{
+  "epoch": 25,
+  "next_batch": 0,
+  "step": 1275,
+  "best": [
+    66.2551440329218,
+    38.035482475119
+  ],
+  "best_epoch": 21,
+  "bad": 4,
+  "audio_hours": 38.560833333333335,
+  "identity": {
+    "base_sha256": "bd3712a3e90b34730b59ca0efe3b2b1e633d57f87cd3342c065aea243e9828df",
+    "config_sha256": "692a04138c757dbe1c79f594200b3ece829c018b348f8f109ccdebeca9ac7203",
+    "code_sha256": "7d8f126e87a82f036ff92764dd039efe27a83cae60fee6da0e627c7a985fe792",
+    "common_sha256": "8c86c749d5bffa28d90edce9525244a9c0ecdf05716148f879fd059d84c2f260",
+    "environment_sha256": "1db9c5da2b3facf9206ffa175094ff1cb2256c25e9f2a878570c7e88f26c8dfe",
+    "manifests": {
+      "train": "140711564f7aef402934c8dcf8439f7edba8646f5baf5a12130dd37b8e7363bb",
+      "validation": "7837150f8e0d2ad617147f1f098e80df24549f8562da9ac760ba3d04ce688f9f",
+      "test": "5ff482b598a39c5035255aa2126a5467829393ee3cc557171584fa7c44d9e963"
+    }
+  },
+  "elapsed_seconds": 2960.571965926996,
+  "all_parameters_trainable": true,
+  "best_model_sha256": "3ec23fa00e4a334491245ddcb1215f51a86914158c17ce20f2edb1897859cef1",
+  "parameters": 114752514
+}

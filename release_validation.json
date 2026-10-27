@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "all_weight_tensors_equal": true,
+  "clean_reload_prediction_matches": {
+    "ctc": 3,
+    "rnnt": 3
+  },
+  "training_dataset_paths_removed": true,
+  "contains_optimizer": false,
+  "selected_checkpoint_sha256": "3ec23fa00e4a334491245ddcb1215f51a86914158c17ce20f2edb1897859cef1",
+  "exported_model_sha256": "4d96d24f154b1dfbf23c5c8914274d339d1dfa2f4eadf23ff725009a44d7f9c0"
+}

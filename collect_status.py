@@ -2,6 +2,7 @@
 import argparse
 import json
 import subprocess
+import textwrap
 from pathlib import Path
 from common import ROOT, write
 
@@ -33,7 +34,23 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--host',default='rtx4090')
     parser.add_argument('--compact',action='store_true')
+    parser.add_argument('--watch',action='store_true',help='Keep one SSH connection until the current pipeline ends')
     args=parser.parse_args()
+    if args.watch:
+        remote=SCRIPT+'\nimport time\nfor _ in range(160):\n'
+        remote+="    if out.get('pipeline_status.json',{}).get('state') in ['complete','failed']:break\n"
+        remote+='    time.sleep(45)\n'+textwrap.indent(SCRIPT,'    ')
+        process=subprocess.Popen(['ssh','-o','BatchMode=yes','-o','ConnectTimeout=15',args.host,'python3 -u -'],
+                                 stdin=subprocess.PIPE,stdout=subprocess.PIPE,text=True,encoding='utf-8')
+        process.stdin.write(remote)
+        process.stdin.close()
+        for line in process.stdout:
+            value=json.loads(line)
+            write(ROOT/'live_status.json',value)
+            keys=['pipeline_status.json','status.json','recent_history','training_completed.json',
+                  'final_results.json','release_validation.json','pipeline_process_alive','gpu']
+            print(json.dumps({k:value[k] for k in keys if k in value},ensure_ascii=False),flush=True)
+        raise SystemExit(process.wait())
     result=subprocess.run(['ssh','-o','BatchMode=yes','-o','ConnectTimeout=15',args.host,'python3 -'],
                           input=SCRIPT,capture_output=True,text=True,encoding='utf-8',check=True)
     value=json.loads(result.stdout)

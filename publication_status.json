@@ -1,0 +1,18 @@
+{
+  "checked_utc": "2026-10-27T08:11:07.866091+00:00",
+  "requested_visibility": "private",
+  "github": {
+    "url": "https://github.com/persianspeech/hossein-dysarthria-asr",
+    "private": true,
+    "code_pushed": true
+  },
+  "huggingface": {
+    "stage": "blocked",
+    "http_status": 403,
+    "namespace": "Hossein-Dysarthria-Net",
+    "reason": "Existing fine-grained token can write only under gooran; organization repository write permission is missing.",
+    "dataset_repo": "Hossein-Dysarthria-Net/hossein-persian-speech",
+    "model_repo": "Hossein-Dysarthria-Net/Shenava-Koochik-Hossein",
+    "model_and_dataset_uploaded": false
+  }
+}

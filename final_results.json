@@ -1,0 +1,96 @@
+{
+  "metrics": {
+    "baseline": {
+      "test": {
+        "ctc": {
+          "n": 51,
+          "wer": 87.86764705882354,
+          "cer": 57.34211545912437,
+          "raw_wer": 89.33823529411765,
+          "raw_cer": 57.8845408756296
+        },
+        "rnnt": {
+          "n": 51,
+          "wer": 88.6029411764706,
+          "cer": 68.57807051530415,
+          "raw_wer": 88.60294117647058,
+          "raw_cer": 68.57807051530415
+        }
+      },
+      "validation": {
+        "ctc": {
+          "n": 51,
+          "wer": 86.0082304526749,
+          "cer": 58.02682821289485,
+          "raw_wer": 87.86008230452676,
+          "raw_cer": 58.80571181306794
+        },
+        "rnnt": {
+          "n": 51,
+          "wer": 89.30041152263375,
+          "cer": 70.79186499350931,
+          "raw_wer": 89.30041152263375,
+          "raw_cer": 70.79186499350931
+        }
+      }
+    },
+    "selected": {
+      "test": {
+        "ctc": {
+          "n": 51,
+          "wer": 61.9485294117647,
+          "cer": 33.66912049593181,
+          "raw_wer": 61.94852941176471,
+          "raw_cer": 33.66912049593181
+        },
+        "rnnt": {
+          "n": 51,
+          "wer": 62.31617647058823,
+          "cer": 39.945757458349476,
+          "raw_wer": 62.31617647058824,
+          "raw_cer": 39.945757458349476
+        }
+      },
+      "validation": {
+        "ctc": {
+          "n": 51,
+          "wer": 66.2551440329218,
+          "cer": 38.035482475119,
+          "raw_wer": 66.2551440329218,
+          "raw_cer": 38.035482475119
+        },
+        "rnnt": {
+          "n": 51,
+          "wer": 65.63786008230453,
+          "cer": 42.36261358719169,
+          "raw_wer": 65.63786008230453,
+          "raw_cer": 42.362613587191696
+        }
+      }
+    }
+  },
+  "comparison": {
+    "ctc": {
+      "wer_delta_percentage_points": -25.919117647058822,
+      "paired_bootstrap_95ci": [
+        -29.64334876934788,
+        -22.114386792452837
+      ],
+      "resamples": 2000
+    },
+    "rnnt": {
+      "wer_delta_percentage_points": -26.28676470588235,
+      "paired_bootstrap_95ci": [
+        -30.85327462974166,
+        -21.72010378358163
+      ],
+      "resamples": 2000
+    }
+  },
+  "selected_epoch": 21,
+  "selected_model_sha256": "3ec23fa00e4a334491245ddcb1215f51a86914158c17ce20f2edb1897859cef1",
+  "test_used_for_selection": false,
+  "primary_head": "ctc",
+  "label_kind": "ASR-derived reference prompts; not human-verified Hossein transcriptions",
+  "test_scope": "51 held-out utterances by the same speaker; prompt-label agreement, not human-verified transcript accuracy"
+}

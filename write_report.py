@@ -41,6 +41,12 @@ for kind in ['dataset','model']:
         prefix='datasets/' if kind=='dataset' else ''
         lines.append(f"{kind}: https://huggingface.co/{prefix}{value['repo_id']} — commit `{value['commit']}`؛ تمام hashهای remote تأیید شد.")
     else:
-        lines.append(f'{kind}: بارگذاری Hugging Face هنوز تأیید نشده است؛ وضعیت دسترسی سازمان/توکن باید بررسی شود.')
+        pub=ROOT/'publication_status.json'
+        if pub.exists() and read(pub).get('huggingface',{}).get('http_status')==403:
+            lines.append(f'{kind}: بارگذاری انجام نشد؛ API سازمان مقصد خطای 403 داد. توکن فعلی مجوز نوشتن در سازمان Hossein-Dysarthria-Net را ندارد.')
+        else:
+            lines.append(f'{kind}: بارگذاری Hugging Face هنوز تأیید نشده است؛ وضعیت دسترسی سازمان/توکن باید بررسی شود.')
+lines+=['','نسخهٔ کامل اجرا و مدل روی 4090 در `/home/user01/hossein-dysarthria` محفوظ است.',
+        'نسخهٔ آمادهٔ بارگذاری در `hf_model/` و `hf_dataset/` قرار دارد؛ کد خاموش یا معلق برای انتشار خودکار ساخته نشده است.']
 (ROOT/'FINAL_REPORT_FA.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
 print(str(ROOT/'FINAL_REPORT_FA.md'))
